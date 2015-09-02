@@ -1,0 +1,3 @@
+./configure > configOutput.txt
+
+make -j 5 > makeOutput.txt
