@@ -1,3 +1,11 @@
+# Assume R-3.2.2 will be extracted to C:\users\brb\Downloads folder.
+
+# Need to download R_Tcl_8-5-8.zip and extract it to R-3.2.2 folder.
+# http://www.stats.ox.ac.uk/pub/Rtools/R30x.html
+
+mkdir c:/tmp
+TMPDIR=c:/tmp
+
 tar xzvf R-3.2.2.tar.gz
 
 cd R-3.2.2\src\gnuwin32
@@ -8,4 +16,25 @@ cp MkRules.dist MkRules.local
 # add c:/R/extsoft to LOCAL_SOFT and uncomment
 # the line of EX_LIBS
 
-make -j2 > makeOutput.txt 2>&1
+# make clean
+
+make > makeOutput.txt 2>&1
+
+# Got an error complaining about loadNamespace(Rcpp). 
+# However R.exe is still created.
+# Use the generated R.exe to run install.packages("Rcpp")
+# But be sure the package is installed to the current R/library
+#     not Documents/R/R-3.2 folder.
+# install.packages("Rcpp", lib="C:/users/brb/Downloads/R-3.2.2/library", 
+#                   repos = "https://cran.rstudio.com")
+
+We can run 'make' command again if there is any errors. 
+
+The last error is from texi2dvi which is related to (not avail) pdflatex.
+
+So the R-3.2.2\bin\ contains R.exe, Rscript.exe and i386 subfolder.
+
+Question: how to diable creating NEWS.pdf which gave an error pdflatex is not available?
+In fact, NEWS.pdf has existed under R-3.2.2\doc from R source tarball though the github does not show this file.
+
+
