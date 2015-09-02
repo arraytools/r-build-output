@@ -1,0 +1,11 @@
+tar xzvf R-3.2.2.tar.gz
+
+cd R-3.2.2\src\gnuwin32
+
+PATH=c:\Rtools\bin;c:\Rtools\gcc-4.6.3\bin;C:\users\brb\Downloads\R-3.2.2\bin
+
+cp MkRules.dist MkRules.local 
+# add c:/R/extsoft to LOCAL_SOFT and uncomment
+# the line of EX_LIBS
+
+make -j2 > makeOutput.txt 2>&1

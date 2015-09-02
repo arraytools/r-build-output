@@ -1,0 +1,1174 @@
+make[1]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+make[1]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+make --no-print-directory -C front-ends Rpwd
+make -C ../../include -f Makefile.win version
+make Rpwd.exe
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c rpwd.c -o rpwd.o
+windres    -i rcico.rc -o rcico.o
+gcc -std=gnu99  -s  -o Rpwd.exe rpwd.o rcico.o  
+cp front-ends/Rpwd.exe Rpwd.exe
+-------- Building ../../../library/base/R/Rprofile from ../../library/profile/Common.R ../../library/profile/Rprofile.windows--------
+mkdir -p ../../../library/base/R
+cp -p html/rwin.html ../../../doc/html/index.html
+cp -p ./etc/Makeconf ./etc/Rcmd_environ ./etc/Rconsole ./etc/Rdevga ./etc/Rprofile.site ./etc/rgb.txt ../../../etc
+rm -f ../../../etc/Makeconf
+mkdir -p ../../../etc//i386
+sed -e "s|IMPDIR = bin|IMPDIR = bin/i386|" \
+  -e "s/@EOPTS@/-mtune=core2/" \
+  -e "s|BINPREF =|BINPREF = |" \
+  -e "s|LOCAL_SOFT =|LOCAL_SOFT = C:/r/extsoft|" \
+  -e "s|R_ARCH =|R_ARCH = /i386|" \
+  -e "s|DT_ARCH =|DT_ARCH = |" \
+  -e "s|RC_ARCH =|RC_ARCH = |" \
+  -e "s|M_ARCH =|M_ARCH = |" \
+  -e "s|@SYMPAT@|'s/^.* [BCDRT] _/ /p'|" \
+  -e "s|@OPENMP@|-fopenmp|" \
+  -e "s|@PTHREAD@|-pthread|" \
+  -e "s@NM_FILTER =@NM_FILTER = @" \
+  etc/Makeconf > ../../../etc/i386/Makeconf
+sed -e "s+@BINDIR@+bin/i386+" Makeconf > ../../../Makeconf
+cp -p ../CHANGES0 ../CHANGES1 ../CHANGES2 ../../../doc
+make[4]: Nothing to be done for `svnonly'.
+installing C headers
+make[5]: Nothing to be done for `svnonly'.
+installing C headers
+make --no-print-directory -C ../extra/intl CFLAGS='-O3 -Wall -pedantic -mtune=core2' -f Makefile.win
+sed -e 's,@''HAVE_POSIX_PRINTF''@,1,g' \
+    -e 's,@''HAVE_ASPRINTF''@,0,g' \
+    -e 's,@''HAVE_SNPRINTF''@,1,g' \
+    -e 's,@''HAVE_WPRINTF''@,0,g' \
+  < libgnuintl.h.in > libgnuintl.h
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c bindtextdom.c -o bindtextdom.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c dcgettext.c -o dcgettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c dgettext.c -o dgettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c gettext.c -o gettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c finddomain.c -o finddomain.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c loadmsgcat.c -o loadmsgcat.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c textdomain.c -o textdomain.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c l10nflist.c -o l10nflist.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c explodename.c -o explodename.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include -DLOCALEDIR=\"\" -O3 -Wall -pedantic -mtune=core2   -c dcigettext.c -o dcigettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c dcngettext.c -o dcngettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c dngettext.c -o dngettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c ngettext.c -o ngettext.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c plural.c -o plural.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c plural-exp.c -o plural-exp.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c langprefs.c -o langprefs.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c localcharset.c -o localcharset.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c localename.c -o localename.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c printf.c -o printf.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c osdep.c -o osdep.o
+gcc -std=gnu99  -DIN_LIBINTL -DHAVE_CONFIG_H -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c hash-string.c -o hash-string.o
+ar crs libintl.a bindtextdom.o dcgettext.o dgettext.o gettext.o finddomain.o loadmsgcat.o textdomain.o l10nflist.o explodename.o dcigettext.o dcngettext.o dngettext.o ngettext.o plural.o plural-exp.o langprefs.o localcharset.o localename.o printf.o osdep.o hash-string.o
+cp libgnuintl.h libintl.h
+make --no-print-directory -C ../appl CFLAGS='-O3 -Wall -pedantic -mtune=core2' FFLAGS='-O3 -mtune=core2' -f Makefile.win
+making integrate.d from integrate.c
+making interv.d from interv.c
+making maxcol.d from maxcol.c
+making optim.d from optim.c
+making pretty.d from pretty.c
+making uncmin.d from uncmin.c
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c integrate.c -o integrate.o
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c interv.c -o interv.o
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c maxcol.c -o maxcol.o
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c optim.c -o optim.o
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pretty.c -o pretty.o
+gcc -std=gnu99  -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c uncmin.c -o uncmin.o
+gfortran  -O3 -mtune=core2  -c dchdc.f -o dchdc.o
+gfortran  -O3 -mtune=core2  -c dpbfa.f -o dpbfa.o
+gfortran  -O3 -mtune=core2  -c dpbsl.f -o dpbsl.o
+gfortran  -O3 -mtune=core2  -c dpoco.f -o dpoco.o
+gfortran  -O3 -mtune=core2  -c dpodi.f -o dpodi.o
+gfortran  -O3 -mtune=core2  -c dpofa.f -o dpofa.o
+gfortran  -O3 -mtune=core2  -c dposl.f -o dposl.o
+gfortran  -O3 -mtune=core2  -c dqrdc.f -o dqrdc.o
+gfortran  -O3 -mtune=core2  -c dqrdc2.f -o dqrdc2.o
+gfortran  -O3 -mtune=core2  -c dqrls.f -o dqrls.o
+gfortran  -O3 -mtune=core2  -c dqrsl.f -o dqrsl.o
+gfortran  -O3 -mtune=core2  -c dqrutl.f -o dqrutl.o
+gfortran  -O3 -mtune=core2  -c dsvdc.f -o dsvdc.o
+gfortran  -O3 -mtune=core2  -c dtrco.f -o dtrco.o
+gfortran  -O3 -mtune=core2  -c dtrsl.f -o dtrsl.o
+ar crs libappl.a integrate.o interv.o maxcol.o optim.o pretty.o uncmin.o dchdc.o dpbfa.o dpbsl.o dpoco.o dpodi.o dpofa.o dposl.o dqrdc.o dqrdc2.o dqrls.o dqrsl.o dqrutl.o dsvdc.o dtrco.o dtrsl.o
+make --no-print-directory -C ../nmath CFLAGS='-O3 -Wall -pedantic -mtune=core2' FFLAGS='-O3 -mtune=core2' -f Makefile.win
+making mlutils.d from mlutils.c
+making d1mach.d from d1mach.c
+making i1mach.d from i1mach.c
+making fmax2.d from fmax2.c
+making fmin2.d from fmin2.c
+making fprec.d from fprec.c
+making fround.d from fround.c
+making ftrunc.d from ftrunc.c
+making sign.d from sign.c
+making fsign.d from fsign.c
+making imax2.d from imax2.c
+making imin2.d from imin2.c
+making chebyshev.d from chebyshev.c
+making log1p.d from log1p.c
+making expm1.d from expm1.c
+making lgammacor.d from lgammacor.c
+making gammalims.d from gammalims.c
+making stirlerr.d from stirlerr.c
+making bd0.d from bd0.c
+making gamma.d from gamma.c
+making lgamma.d from lgamma.c
+making gamma_cody.d from gamma_cody.c
+making beta.d from beta.c
+making lbeta.d from lbeta.c
+making polygamma.d from polygamma.c
+making cospi.d from cospi.c
+making bessel_i.d from bessel_i.c
+making bessel_j.d from bessel_j.c
+making bessel_k.d from bessel_k.c
+making bessel_y.d from bessel_y.c
+making choose.d from choose.c
+making snorm.d from snorm.c
+making sexp.d from sexp.c
+making dgamma.d from dgamma.c
+making pgamma.d from pgamma.c
+making qgamma.d from qgamma.c
+making rgamma.d from rgamma.c
+making dbeta.d from dbeta.c
+making pbeta.d from pbeta.c
+making qbeta.d from qbeta.c
+making rbeta.d from rbeta.c
+making dunif.d from dunif.c
+making punif.d from punif.c
+making qunif.d from qunif.c
+making runif.d from runif.c
+making dnorm.d from dnorm.c
+making pnorm.d from pnorm.c
+making qnorm.d from qnorm.c
+making rnorm.d from rnorm.c
+making dlnorm.d from dlnorm.c
+making plnorm.d from plnorm.c
+making qlnorm.d from qlnorm.c
+making rlnorm.d from rlnorm.c
+making df.d from df.c
+making pf.d from pf.c
+making qf.d from qf.c
+making rf.d from rf.c
+making dnf.d from dnf.c
+making dt.d from dt.c
+making pt.d from pt.c
+making qt.d from qt.c
+making rt.d from rt.c
+making dnt.d from dnt.c
+making dchisq.d from dchisq.c
+making pchisq.d from pchisq.c
+making qchisq.d from qchisq.c
+making rchisq.d from rchisq.c
+making rnchisq.d from rnchisq.c
+making dbinom.d from dbinom.c
+making pbinom.d from pbinom.c
+making qbinom.d from qbinom.c
+making rbinom.d from rbinom.c
+making rmultinom.d from rmultinom.c
+making dcauchy.d from dcauchy.c
+making pcauchy.d from pcauchy.c
+making qcauchy.d from qcauchy.c
+making rcauchy.d from rcauchy.c
+making dexp.d from dexp.c
+making pexp.d from pexp.c
+making qexp.d from qexp.c
+making rexp.d from rexp.c
+making dgeom.d from dgeom.c
+making pgeom.d from pgeom.c
+making qgeom.d from qgeom.c
+making rgeom.d from rgeom.c
+making dhyper.d from dhyper.c
+making phyper.d from phyper.c
+making qhyper.d from qhyper.c
+making rhyper.d from rhyper.c
+making dnbinom.d from dnbinom.c
+making pnbinom.d from pnbinom.c
+making qnbinom.d from qnbinom.c
+making rnbinom.d from rnbinom.c
+making dpois.d from dpois.c
+making ppois.d from ppois.c
+making qpois.d from qpois.c
+making rpois.d from rpois.c
+making dweibull.d from dweibull.c
+making pweibull.d from pweibull.c
+making qweibull.d from qweibull.c
+making rweibull.d from rweibull.c
+making dlogis.d from dlogis.c
+making plogis.d from plogis.c
+making qlogis.d from qlogis.c
+making rlogis.d from rlogis.c
+making dnchisq.d from dnchisq.c
+making pnchisq.d from pnchisq.c
+making qnchisq.d from qnchisq.c
+making dnbeta.d from dnbeta.c
+making pnbeta.d from pnbeta.c
+making qnbeta.d from qnbeta.c
+making pnf.d from pnf.c
+making pnt.d from pnt.c
+making qnf.d from qnf.c
+making qnt.d from qnt.c
+making ptukey.d from ptukey.c
+making qtukey.d from qtukey.c
+making toms708.d from toms708.c
+making wilcox.d from wilcox.c
+making signrank.d from signrank.c
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c mlutils.c -o mlutils.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c d1mach.c -o d1mach.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c i1mach.c -o i1mach.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c fmax2.c -o fmax2.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c fmin2.c -o fmin2.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c fprec.c -o fprec.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c fround.c -o fround.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c ftrunc.c -o ftrunc.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c sign.c -o sign.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c fsign.c -o fsign.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c imax2.c -o imax2.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c imin2.c -o imin2.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c chebyshev.c -o chebyshev.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c log1p.c -o log1p.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c expm1.c -o expm1.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c lgammacor.c -o lgammacor.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c gammalims.c -o gammalims.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c stirlerr.c -o stirlerr.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c bd0.c -o bd0.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c gamma.c -o gamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c lgamma.c -o lgamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c gamma_cody.c -o gamma_cody.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c beta.c -o beta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c lbeta.c -o lbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c polygamma.c -o polygamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c cospi.c -o cospi.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c bessel_i.c -o bessel_i.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c bessel_j.c -o bessel_j.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c bessel_k.c -o bessel_k.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c bessel_y.c -o bessel_y.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c choose.c -o choose.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c snorm.c -o snorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c sexp.c -o sexp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dgamma.c -o dgamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pgamma.c -o pgamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qgamma.c -o qgamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rgamma.c -o rgamma.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dbeta.c -o dbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pbeta.c -o pbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qbeta.c -o qbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rbeta.c -o rbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dunif.c -o dunif.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c punif.c -o punif.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qunif.c -o qunif.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c runif.c -o runif.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnorm.c -o dnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnorm.c -o pnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnorm.c -o qnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rnorm.c -o rnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dlnorm.c -o dlnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c plnorm.c -o plnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qlnorm.c -o qlnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rlnorm.c -o rlnorm.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c df.c -o df.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pf.c -o pf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qf.c -o qf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rf.c -o rf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnf.c -o dnf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dt.c -o dt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pt.c -o pt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qt.c -o qt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rt.c -o rt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnt.c -o dnt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dchisq.c -o dchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pchisq.c -o pchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qchisq.c -o qchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rchisq.c -o rchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rnchisq.c -o rnchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dbinom.c -o dbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pbinom.c -o pbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qbinom.c -o qbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rbinom.c -o rbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rmultinom.c -o rmultinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dcauchy.c -o dcauchy.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pcauchy.c -o pcauchy.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qcauchy.c -o qcauchy.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rcauchy.c -o rcauchy.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dexp.c -o dexp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pexp.c -o pexp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qexp.c -o qexp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rexp.c -o rexp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dgeom.c -o dgeom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pgeom.c -o pgeom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qgeom.c -o qgeom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rgeom.c -o rgeom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dhyper.c -o dhyper.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c phyper.c -o phyper.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qhyper.c -o qhyper.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rhyper.c -o rhyper.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnbinom.c -o dnbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnbinom.c -o pnbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnbinom.c -o qnbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rnbinom.c -o rnbinom.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dpois.c -o dpois.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c ppois.c -o ppois.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qpois.c -o qpois.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rpois.c -o rpois.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dweibull.c -o dweibull.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pweibull.c -o pweibull.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qweibull.c -o qweibull.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rweibull.c -o rweibull.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dlogis.c -o dlogis.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c plogis.c -o plogis.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qlogis.c -o qlogis.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rlogis.c -o rlogis.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnchisq.c -o dnchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnchisq.c -o pnchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnchisq.c -o qnchisq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dnbeta.c -o dnbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnbeta.c -o pnbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnbeta.c -o qnbeta.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnf.c -o pnf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pnt.c -o pnt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnf.c -o qnf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qnt.c -o qnt.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c ptukey.c -o ptukey.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c qtukey.c -o qtukey.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c toms708.c -o toms708.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c wilcox.c -o wilcox.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c signrank.c -o signrank.o
+ar crs libnmath.a mlutils.o d1mach.o i1mach.o fmax2.o fmin2.o fprec.o fround.o ftrunc.o sign.o fsign.o imax2.o imin2.o chebyshev.o log1p.o expm1.o lgammacor.o gammalims.o stirlerr.o bd0.o gamma.o lgamma.o gamma_cody.o beta.o lbeta.o polygamma.o cospi.o bessel_i.o bessel_j.o bessel_k.o bessel_y.o choose.o snorm.o sexp.o dgamma.o pgamma.o qgamma.o rgamma.o dbeta.o pbeta.o qbeta.o rbeta.o dunif.o punif.o qunif.o runif.o dnorm.o pnorm.o qnorm.o rnorm.o dlnorm.o plnorm.o qlnorm.o rlnorm.o df.o pf.o qf.o rf.o dnf.o dt.o pt.o qt.o rt.o dnt.o dchisq.o pchisq.o qchisq.o rchisq.o rnchisq.o dbinom.o pbinom.o qbinom.o rbinom.o rmultinom.o dcauchy.o pcauchy.o qcauchy.o rcauchy.o dexp.o pexp.o qexp.o rexp.o dgeom.o pgeom.o qgeom.o rgeom.o dhyper.o phyper.o qhyper.o rhyper.o dnbinom.o pnbinom.o qnbinom.o rnbinom.o dpois.o ppois.o qpois.o rpois.o dweibull.o pweibull.o qweibull.o rweibull.o dlogis.o plogis.o qlogis.o rlogis.o dnchisq.o pnchisq.o qnchisq.o dnbeta.o pnbeta.o qnbeta.o pnf.o pnt.o qnf.o qnt.o ptukey.o qtukey.o toms708.o wilcox.o signrank.o
+make --no-print-directory -C ../main CFLAGS='-O3 -Wall -pedantic -mtune=core2' FFLAGS='-O3 -mtune=core2' malloc-DEFS='' -f Makefile.win
+making CommandLineArgs.d from CommandLineArgs.c
+making Rdynload.d from Rdynload.c
+making Renviron.d from Renviron.c
+making RNG.d from RNG.c
+making agrep.d from agrep.c
+making apply.d from apply.c
+making arithmetic.d from arithmetic.c
+making array.d from array.c
+making attrib.d from attrib.c
+making bind.d from bind.c
+making builtin.d from builtin.c
+making character.d from character.c
+making coerce.d from coerce.c
+making colors.d from colors.c
+making complex.d from complex.c
+making connections.d from connections.c
+making context.d from context.c
+making cum.d from cum.c
+making dcf.d from dcf.c
+making datetime.d from datetime.c
+making debug.d from debug.c
+making deparse.d from deparse.c
+making devices.d from devices.c
+making dotcode.d from dotcode.c
+making dounzip.d from dounzip.c
+making dstruct.d from dstruct.c
+making duplicate.d from duplicate.c
+making edit.d from edit.c
+making engine.d from engine.c
+making envir.d from envir.c
+making errors.d from errors.c
+making eval.d from eval.c
+making format.d from format.c
+making gevents.d from gevents.c
+making gram.d from gram.c
+making gram-ex.d from gram-ex.c
+making graphics.d from graphics.c
+making grep.d from grep.c
+making identical.d from identical.c
+making inlined.d from inlined.c
+making inspect.d from inspect.c
+making internet.d from internet.c
+making iosupport.d from iosupport.c
+making lapack.d from lapack.c
+making list.d from list.c
+making localecharset.d from localecharset.c
+making logic.d from logic.c
+making main.d from main.c
+making mapply.d from mapply.c
+making match.d from match.c
+making memory.d from memory.c
+making mkdtemp.d from mkdtemp.c
+making names.d from names.c
+making objects.d from objects.c
+making options.d from options.c
+making paste.d from paste.c
+making platform.d from platform.c
+making plot.d from plot.c
+making plot3d.d from plot3d.c
+making plotmath.d from plotmath.c
+making print.d from print.c
+making printarray.d from printarray.c
+making printvector.d from printvector.c
+making printutils.d from printutils.c
+making qsort.d from qsort.c
+making random.d from random.c
+making raw.d from raw.c
+making registration.d from registration.c
+making relop.d from relop.c
+making rlocale.d from rlocale.c
+making saveload.d from saveload.c
+making scan.d from scan.c
+making seq.d from seq.c
+making serialize.d from serialize.c
+making sort.d from sort.c
+making source.d from source.c
+making split.d from split.c
+making sprintf.d from sprintf.c
+making startup.d from startup.c
+making subassign.d from subassign.c
+making subscript.d from subscript.c
+making subset.d from subset.c
+making summary.d from summary.c
+making sysutils.d from sysutils.c
+making times.d from times.c
+making unique.d from unique.c
+making util.d from util.c
+making version.d from version.c
+making g_alab_her.d from g_alab_her.c
+making g_cntrlify.d from g_cntrlify.c
+making g_fontdb.d from g_fontdb.c
+making g_her_glyph.d from g_her_glyph.c
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c CommandLineArgs.c -o CommandLineArgs.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c Rdynload.c -o Rdynload.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c Renviron.c -o Renviron.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../nmath -O3 -Wall -pedantic -mtune=core2   -c RNG.c -o RNG.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../extra -O3 -Wall -pedantic -mtune=core2   -c agrep.c -o agrep.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c apply.c -o apply.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c arithmetic.c -o arithmetic.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c array.c -o array.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c attrib.c -o attrib.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c bind.c -o bind.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../gnuwin32 -O3 -Wall -pedantic -mtune=core2   -c builtin.c -o builtin.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c character.c -o character.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c coerce.c -o coerce.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c colors.c -o colors.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c complex.c -o complex.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -DLZMA_API_STATIC -I"C:/r/extsoft"/include -O3 -Wall -pedantic -mtune=core2   -c connections.c -o connections.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c context.c -o context.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c cum.c -o cum.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../extra -O3 -Wall -pedantic -mtune=core2   -c dcf.c -o dcf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c datetime.c -o datetime.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c debug.c -o debug.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2 -Wno-format  -c deparse.c -o deparse.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c devices.c -o devices.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c dotcode.c -o dotcode.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -IC:/r/extsoft/include -O3 -Wall -pedantic -mtune=core2   -c dounzip.c -o dounzip.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c dstruct.c -o dstruct.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c duplicate.c -o duplicate.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../gnuwin32 -O3 -Wall -pedantic -mtune=core2   -c edit.c -o edit.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c engine.c -o engine.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c envir.c -o envir.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c errors.c -o errors.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c eval.c -o eval.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c format.c -o format.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c gevents.c -o gevents.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c gram.c -o gram.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c gram-ex.c -o gram-ex.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c graphics.c -o graphics.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -DPCRE_STATIC -I../extra -I../gnuwin32 -I"C:/r/extsoft"/include -O3 -Wall -pedantic -mtune=core2   -c grep.c -o grep.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c identical.c -o identical.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c inlined.c -o inlined.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c inspect.c -o inspect.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c internet.c -o internet.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c iosupport.c -o iosupport.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c lapack.c -o lapack.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c list.c -o list.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c localecharset.c -o localecharset.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c logic.c -o logic.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c main.c -o main.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c mapply.c -o mapply.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c match.c -o match.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c memory.c -o memory.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c mkdtemp.c -o mkdtemp.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c names.c -o names.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c objects.c -o objects.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c options.c -o options.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c paste.c -o paste.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../gnuwin32 -I../extra -DPLATFORM_PKGTYPE='"win.binary"' -DPCRE_STATIC -DLZMA_API_STATIC -I"C:/r/extsoft"/include -O3 -Wall -pedantic -mtune=core2   -c platform.c -o platform.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c plot.c -o plot.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c plot3d.c -o plot3d.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c plotmath.c -o plotmath.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c print.c -o print.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c printarray.c -o printarray.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c printvector.c -o printvector.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../gnuwin32 -O3 -Wall -pedantic -mtune=core2   -c printutils.c -o printutils.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c qsort.c -o qsort.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c random.c -o random.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c raw.c -o raw.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c registration.c -o registration.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c relop.c -o relop.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c rlocale.c -o rlocale.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../extra/xdr -O3 -Wall -pedantic -mtune=core2   -c saveload.c -o saveload.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c scan.c -o scan.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c seq.c -o seq.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../extra/xdr -O3 -Wall -pedantic -mtune=core2   -c serialize.c -o serialize.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c sort.c -o sort.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c source.c -o source.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c split.c -o split.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c sprintf.c -o sprintf.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c startup.c -o startup.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c subassign.c -o subassign.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c subscript.c -o subscript.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c subset.c -o subset.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c summary.c -o summary.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -I../gnuwin32 -O3 -Wall -pedantic -mtune=core2   -c sysutils.c -o sysutils.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c times.c -o times.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c unique.c -o unique.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"' -DLZMA_API_STATIC -I"C:/r/extsoft"/include -O3 -Wall -pedantic -mtune=core2   -c util.c -o util.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c version.c -o version.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c g_alab_her.c -o g_alab_her.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c g_cntrlify.c -o g_cntrlify.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c g_fontdb.c -o g_fontdb.o
+gcc -std=gnu99  -I. -I../include -DHAVE_CONFIG_H -DR_DLL_BUILD -DR_ARCH='"i386"'  -O3 -Wall -pedantic -mtune=core2   -c g_her_glyph.c -o g_her_glyph.o
+gfortran  -O3 -mtune=core2  -c xxxpr.f -o xxxpr.o
+ar crs libmain.a CommandLineArgs.o Rdynload.o Renviron.o RNG.o agrep.o apply.o arithmetic.o array.o attrib.o bind.o builtin.o character.o coerce.o colors.o complex.o connections.o context.o cum.o dcf.o datetime.o debug.o deparse.o devices.o dotcode.o dounzip.o dstruct.o duplicate.o edit.o engine.o envir.o errors.o eval.o format.o gevents.o gram.o gram-ex.o graphics.o grep.o identical.o inlined.o inspect.o internet.o iosupport.o lapack.o list.o localecharset.o logic.o main.o mapply.o match.o memory.o mkdtemp.o names.o objects.o options.o paste.o platform.o plot.o plot3d.o plotmath.o print.o printarray.o printvector.o printutils.o qsort.o random.o raw.o registration.o relop.o rlocale.o saveload.o scan.o seq.o serialize.o sort.o source.o split.o sprintf.o startup.o subassign.o subscript.o subset.o summary.o sysutils.o times.o unique.o util.o version.o g_alab_her.o g_cntrlify.o g_fontdb.o g_her_glyph.o xxxpr.o
+make --no-print-directory -C ./getline CFLAGS='-O3 -Wall -pedantic -mtune=core2'
+gcc -std=gnu99  -DWin32 -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c getline.c -o getline.o
+gcc -std=gnu99  -DWin32 -I. -I../../include  -O3 -Wall -pedantic -mtune=core2   -c wc_history.c -o wc_history.o
+ar crs gl.a getline.o wc_history.o
+making arith.d from arith.c
+making array.d from array.c
+making bitmaps.d from bitmaps.c
+making buttons.d from buttons.c
+making clipboard.d from clipboard.c
+making context.d from context.c
+making controls.d from controls.c
+making cursors.d from cursors.c
+making dialogs.d from dialogs.c
+making drawing.d from drawing.c
+making drawtext.d from drawtext.c
+making events.d from events.c
+making fonts.d from fonts.c
+making gbuttons.d from gbuttons.c
+making gdraw.d from gdraw.c
+making gif.d from gif.c
+making gimage.d from gimage.c
+making gmenus.d from gmenus.c
+making image.d from image.c
+making init.d from init.c
+making menus.d from menus.c
+making metafile.d from metafile.c
+making objects.d from objects.c
+making printer.d from printer.c
+making rgb.d from rgb.c
+making status.d from status.c
+making stdimg.d from stdimg.c
+making strings.d from strings.c
+making tooltips.d from tooltips.c
+making windows.d from windows.c
+dlltool --as as  -k  --dllname R.dll --input-def R.def --output-lib libR.dll.a
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c arith.c -o arith.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c array.c -o array.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c bitmaps.c -o bitmaps.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c buttons.c -o buttons.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c clipboard.c -o clipboard.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c context.c -o context.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c controls.c -o controls.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c cursors.c -o cursors.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c dialogs.c -o dialogs.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c drawing.c -o drawing.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c drawtext.c -o drawtext.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c events.c -o events.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c fonts.c -o fonts.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c gbuttons.c -o gbuttons.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c gdraw.c -o gdraw.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c gif.c -o gif.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c gimage.c -o gimage.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c gmenus.c -o gmenus.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c image.c -o image.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c init.c -o init.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c menus.c -o menus.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c metafile.c -o metafile.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c objects.c -o objects.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c printer.c -o printer.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c rgb.c -o rgb.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c status.c -o status.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c stdimg.c -o stdimg.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c strings.c -o strings.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c tooltips.c -o tooltips.o
+gcc -std=gnu99  -I. -I../../gnuwin32 -I../../include -DGA_DLL_BUILD -DENABLE_NLS=1  -O3 -Wall -pedantic -mtune=core2   -c windows.c -o windows.o
+windres    -i dllversion.rc -o dllversion.o
+gcc -std=gnu99  -shared -mwindows -o Rgraphapp.dll Rgraphapp.def arith.o array.o bitmaps.o buttons.o clipboard.o context.o controls.o cursors.o dialogs.o drawing.o drawtext.o events.o fonts.o gbuttons.o gdraw.o gif.o gimage.o gmenus.o image.o init.o menus.o metafile.o objects.o printer.o rgb.o status.o stdimg.o strings.o tooltips.o windows.o dllversion.o -L. -lR -lcomctl32 -limm32 -lmsimg32
+gcc -std=gnu99  -I. -I../../include -DWIN32 -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c xdr.c -o xdr.o
+gcc -std=gnu99  -I. -I../../include -DWIN32 -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c xdr_float.c -o xdr_float.o
+gcc -std=gnu99  -I. -I../../include -DWIN32 -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c xdr_stdio.c -o xdr_stdio.o
+gcc -std=gnu99  -I. -I../../include -DWIN32 -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c xdr_mem.c -o xdr_mem.o
+ar crs libxdr.a xdr.o xdr_float.o xdr_stdio.o xdr_mem.o
+make -f Makefile.win makeMakedeps
+making regcomp.d from regcomp.c
+making regerror.d from regerror.c
+making regexec.d from regexec.c
+making tre-ast.d from tre-ast.c
+making tre-compile.d from tre-compile.c
+making tre-match-approx.d from tre-match-approx.c
+making tre-match-backtrack.d from tre-match-backtrack.c
+making tre-match-parallel.d from tre-match-parallel.c
+making tre-mem.d from tre-mem.c
+making tre-parse.d from tre-parse.c
+making tre-stack.d from tre-stack.c
+making xmalloc.d from xmalloc.c
+make -f Makefile.win libtre.a
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c regcomp.c -o regcomp.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c regerror.c -o regerror.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c regexec.c -o regexec.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-ast.c -o tre-ast.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-compile.c -o tre-compile.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-match-approx.c -o tre-match-approx.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-match-backtrack.c -o tre-match-backtrack.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-match-parallel.c -o tre-match-parallel.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-mem.c -o tre-mem.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-parse.c -o tre-parse.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c tre-stack.c -o tre-stack.o
+gcc -std=gnu99  -I../../include -I. -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c xmalloc.c -o xmalloc.o
+ar crs libtre.a regcomp.o regerror.o regexec.o tre-ast.o tre-compile.o tre-match-approx.o tre-match-backtrack.o tre-match-parallel.o tre-mem.o tre-parse.o tre-stack.o xmalloc.o
+gcc -std=gnu99    -O3 -Wall -pedantic -mtune=core2   -c compat.c -o compat.o
+gcc -std=gnu99   -DTRIO_FEATURE_WIDECHAR=1 -O3 -Wall -pedantic -mtune=core2   -c trio.c -o trio.o
+trio.c: In function 'TrioReadWideChar':
+trio.c:6317:14: warning: array subscript is above array bounds [-Warray-bounds]
+ar crs libtrio.a compat.o trio.o
+making localtime.d from localtime.c
+making registryTZ.d from registryTZ.c
+making strftime.d from strftime.c
+gcc -std=gnu99  -I../../include -I../../main  -O3 -Wall -pedantic -mtune=core2   -c localtime.c -o localtime.o
+gcc -std=gnu99  -I../../include -I../../main  -O3 -Wall -pedantic -mtune=core2   -c registryTZ.c -o registryTZ.o
+gcc -std=gnu99  -I../../include -I../../main  -O3 -Wall -pedantic -mtune=core2   -c strftime.c -o strftime.o
+strftime.c: In function '_fmt':
+strftime.c:311:3: warning: ISO C does not support the 'I64' ms_printf length modifier [-Wformat]
+ar crs libtz.a localtime.o registryTZ.o strftime.o
+installing zoneinfo
+making win_iconv.d from win_iconv.c
+gcc -std=gnu99  -I../../include  -O3 -Wall -pedantic -mtune=core2   -c win_iconv.c -o win_iconv.o
+gcc -std=gnu99  -shared   -o Riconv.dll Riconv.def win_iconv.o  
+making console.d from console.c
+making dynload.d from dynload.c
+making editor.d from editor.c
+making embeddedR.d from embeddedR.c
+making extra.d from extra.c
+making malloc.d from malloc.c
+making opt.d from opt.c
+making pager.d from pager.c
+making preferences.d from preferences.c
+making psignal.d from psignal.c
+making rhome.d from rhome.c
+making rt_complete.d from rt_complete.c
+making rui.d from rui.c
+making run.d from run.c
+making shext.d from shext.c
+making sys-win32.d from sys-win32.c
+making system.d from system.c
+making dos_wglob.d from dos_wglob.c
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c console.c -o console.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dynload.c -o dynload.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c editor.c -o editor.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c embeddedR.c -o embeddedR.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD -I../library/grDevices/src -O3 -Wall -pedantic -mtune=core2   -c extra.c -o extra.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c malloc.c -o malloc.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c opt.c -o opt.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c pager.c -o pager.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c preferences.c -o preferences.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c psignal.c -o psignal.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rhome.c -o rhome.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rt_complete.c -o rt_complete.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c rui.c -o rui.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c run.c -o run.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c shext.c -o shext.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c sys-win32.c -o sys-win32.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c system.c -o system.o
+gcc -std=gnu99  -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -O3 -Wall -pedantic -mtune=core2   -c dos_wglob.c -o dos_wglob.o
+windres   -I../include -i dllversion.rc -o dllversion.o
+gcc -std=gnu99   -I../include -I. -I../extra -DHAVE_CONFIG_H -DR_DLL_BUILD  -c -o e_pow.o e_pow.S
+gcc -std=gnu99  -shared -s -mwindows -o R.dll R.def console.o dynload.o editor.o embeddedR.o extra.o malloc.o opt.o pager.o preferences.o psignal.o rhome.o rt_complete.o rui.o run.o shext.o sys-win32.o system.o dos_wglob.o dllversion.o e_pow.o ../main/libmain.a ../appl/libappl.a ../nmath/libnmath.a getline/gl.a ../extra/xdr/libxdr.a ../extra/intl/libintl.a ../extra/trio/libtrio.a ../extra/tzone/libtz.a ../extra/tre/libtre.a -fopenmp -L. -lgfortran -lquadmath -lRblas -L../../bin/i386 -lRgraphapp -lRiconv -lcomctl32 -lversion -L"C:/r/extsoft"/lib/i386 -lpcre -lz -lbz2 -llzma 
+cp R.dll ../../bin/i386
+gfortran  -O3 -mtune=core2  -c blas.f -o blas.o
+gfortran  -O3 -mtune=core2  -c cmplxblas.f -o cmplxblas.o
+-------- Building ../../../bin/i386/Rblas.dll --------
+gcc -std=gnu99  -shared  -o ../../../bin/i386/Rblas.dll blas.o cmplxblas.o ../../gnuwin32/dllversion.o Rblas.def -L../../../bin/i386 -lR -lgfortran -lquadmath
+make --no-print-directory -C front-ends
+making RSetReg.d from RSetReg.c
+making Renviron.d from Renviron.c
+making Rfe.d from Rfe.c
+making graphappmain.d from graphappmain.c
+making open.d from open.c
+making rcmdfn.d from rcmdfn.c
+making rgui.d from rgui.c
+making rterm.d from rterm.c
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c graphappmain.c -o graphappmain.o
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"' -DWin32 -O3 -Wall -pedantic   -c rgui.c -o rgui.o
+windres    -i rgico.rc -o rgico.o
+gcc -std=gnu99  -s -mwindows -Wl,--large-address-aware -Wl,--stack=0x1000000 -o Rgui.exe graphappmain.o rgui.o rgico.o -L../../../bin/i386 -lR -lRgraphapp 
+mkdir -p ../../../bin/i386
+cp Rgui.exe ../../../bin/i386/Rgui.exe
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"' -DWin32 -O3 -Wall -pedantic   -c rterm.c -o rterm.o
+windres    -i rtico.rc -o rtico.o
+gcc -std=gnu99  -s -Wl,--large-address-aware -Wl,--stack=0x1000000 -o Rterm.exe graphappmain.o rterm.o rtico.o -L../../../bin/i386 -lR -lRgraphapp 
+mkdir -p ../../../bin/i386
+cp Rterm.exe ../../../bin/i386/Rterm.exe	
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c rcmd.c -o rcmd.o
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic -DBINDIR='"bin/i386"'  -c rcmdfn.c -o rcmdfn.o
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c Renviron.c -o Renviron.o
+gcc -std=gnu99  -s  -o Rcmd.exe rcmd.o ../rhome.o ../shext.o rcico.o rcmdfn.o Renviron.o  
+mkdir -p ../../../bin/i386
+cp Rcmd.exe ../../../bin/i386/Rcmd.exe
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c RSetReg.c -o RSetReg.o
+gcc -std=gnu99  -s  -o RSetReg.exe RSetReg.o ../rhome.o rcico.o  
+mkdir -p ../../../bin/i386
+cp RSetReg.exe ../../../bin/i386/RSetReg.exe
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c R.c -o R.o
+gcc -std=gnu99  -s  -o R.exe R.o ../rhome.o ../shext.o rcico.o rcmdfn.o Renviron.o  
+mkdir -p ../../../bin/i386
+cp R.exe ../../../bin/i386/R.exe	
+gcc -std=gnu99  -O3 -Wall -pedantic -DBINDIR='"bin/i386"' -I. -I../../include -DHAVE_CONFIG_H -c ../../unix/Rscript.c -o Rscript.o
+windres    -i rsico.rc -o rsico.o
+gcc -std=gnu99  -s -Wl,--large-address-aware -Wl,--stack=0x1000000 -o Rscript.exe Rscript.o rsico.o -L../../../bin/i386 -lR -lRgraphapp 
+mkdir -p ../../../bin/i386
+cp Rscript.exe ../../../bin/i386/Rscript.exe	
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c open.c -o open.o
+gcc -std=gnu99  -s  -o open.exe open.o  
+mkdir -p ../../../bin/i386
+cp open.exe ../../../bin/i386/open.exe	
+gcc -std=gnu99  -I../../include -DR_ARCH='"i386"'  -O3 -Wall -pedantic   -c Rfe.c -o Rfe.o
+gcc -std=gnu99  -s  -o Rfe.exe Rfe.o ../rhome.o rcico.o  
+mkdir -p ../../../bin/i386
+cp Rfe.exe ../../../bin/i386/Rfe.exe
+mkdir -p ../../../bin
+cp Rfe.exe ../../../bin/R.exe	
+mkdir -p ../../../bin
+cp Rfe.exe ../../../bin/Rscript.exe	
+cat ../../doc/COPYRIGHTS COPYRIGHTS.win > COPYRIGHTS
+make --no-print-directory -C ../modules -f Makefile.win \
+  CFLAGS='-O3 -Wall -pedantic -mtune=core2' FFLAGS='-O3 -mtune=core2'
+making internet.d from internet.c
+making libcurl.d from libcurl.c
+making nanoftp.d from nanoftp.c
+making nanohttp.d from nanohttp.c
+making sockconn.d from sockconn.c
+making Rsock.d from Rsock.c
+making sock.d from sock.c
+making Rhttpd.d from Rhttpd.c
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c internet.c -o internet.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c libcurl.c -o libcurl.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c nanoftp.c -o nanoftp.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c nanohttp.c -o nanohttp.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c sockconn.c -o sockconn.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c Rhttpd.c -o Rhttpd.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c Rsock.c -o Rsock.o
+gcc -std=gnu99  -I../../include -I../../extra/graphapp -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c sock.c -o sock.o
+windres    -i dllversion.rc -o dllversion.o
+gcc -std=gnu99  -shared  -o ../../../modules/i386/internet.dll internet.o libcurl.o nanoftp.o nanohttp.o sockconn.o Rhttpd.o Rsock.o sock.o dllversion.o internet.def -L../../../bin/i386 -lR -lRgraphapp -lwininet -lws2_32
+making Lapack.d from Lapack.c
+gfortran  -O3 -mtune=core2 -ffloat-store -c dlamch.f -o dlamch.o
+gfortran  -O3 -mtune=core2  -c dlapack.f -o dlapack.o
+gfortran  -O3 -mtune=core2  -c cmplx.f -o cmplx.o
+gcc -std=gnu99  -I../../include -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c init_win.c -o init_win.o
+windres    -i Rlapackrc.rc -o Rlapackrc.o
+gcc -std=gnu99  -shared -s -o ../../../bin/i386/Rlapack.dll dlamch.o dlapack.o cmplx.o init_win.o Rlapackrc.o -L../../../bin/i386 -lR -lRblas -lgfortran -lquadmath
+gcc -std=gnu99  -I../../include -DHAVE_CONFIG_H  -O3 -Wall -pedantic -mtune=core2   -c Lapack.c -o Lapack.o
+windres    -i dllversion.rc -o dllversion.o
+gcc -std=gnu99  -shared -s  -o lapack.dll lapack.def Lapack.o dllversion.o -L../../../bin/i386 -lRlapack -lRblas -lR 
+cp lapack.dll ../../../modules/i386/lapack.dll
+make[1]: warning: jobserver unavailable: using -j1.  Add `+' to parent make rule.
+building package 'base'
+building package 'tools'
+making text.d from text.c
+making init.d from init.c
+making Rmd5.d from Rmd5.c
+making md5.d from md5.c
+making signals.d from signals.c
+making install.d from install.c
+making getfmts.d from getfmts.c
+making http.d from http.c
+making gramLatex.d from gramLatex.c
+making gramRd.d from gramRd.c
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c text.c -o text.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c Rmd5.c -o Rmd5.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c md5.c -o md5.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c signals.c -o signals.o
+signals.c: In function 'ps_kill':
+signals.c:36:16: warning: variable 'res' set but not used [-Wunused-but-set-variable]
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c install.c -o install.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c getfmts.c -o getfmts.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c http.c -o http.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c gramLatex.c -o gramLatex.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c gramRd.c -o gramRd.o
+During startup - Warning messages:
+1: package 'datasets' in options("defaultPackages") was not found 
+2: package 'utils' in options("defaultPackages") was not found 
+3: package 'grDevices' in options("defaultPackages") was not found 
+4: package 'graphics' in options("defaultPackages") was not found 
+5: package 'stats' in options("defaultPackages") was not found 
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc -shared -s -static-libgcc -o tools.dll tmp.def text.o init.o Rmd5.o md5.o signals.o install.o getfmts.o http.o gramLatex.o gramRd.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+During startup - Warning messages:
+1: package 'datasets' in options("defaultPackages") was not found 
+2: package 'utils' in options("defaultPackages") was not found 
+3: package 'grDevices' in options("defaultPackages") was not found 
+4: package 'graphics' in options("defaultPackages") was not found 
+5: package 'stats' in options("defaultPackages") was not found 
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+installing 'sysdata.rda'
+building package 'compiler'
+byte-compiling package 'compiler'
+byte-compiling package 'base'
+byte-compiling package 'tools'
+building package 'utils'
+making init.d from init.c
+making io.d from io.c
+making size.d from size.c
+making sock.d from sock.c
+making stubs.d from stubs.c
+making utils.d from utils.c
+making windows/dataentry.d from windows/dataentry.c
+making windows/dialogs.d from windows/dialogs.c
+making windows/registry.d from windows/registry.c
+making windows/util.d from windows/util.c
+making windows/widgets.d from windows/widgets.c
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c io.c -o io.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c size.c -o size.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c sock.c -o sock.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c stubs.c -o stubs.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c utils.c -o utils.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c windows/dataentry.c -o windows/dataentry.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c windows/dialogs.c -o windows/dialogs.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c windows/registry.c -o windows/registry.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c windows/util.c -o windows/util.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main -I../../../../src/gnuwin32 -I../../../../src/extra -I../../../../src/library/grDevices/src -DLZMA_API_STATIC -IC:/r/extsoft/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c windows/widgets.c -o windows/widgets.o
+gcc -shared -s -static-libgcc -o utils.dll tmp.def init.o io.o size.o sock.o stubs.o utils.o windows/dataentry.o windows/dialogs.o windows/registry.o windows/util.o windows/widgets.o ../../../gnuwin32/dllversion.o -lRgraphapp -lVersion -LC:/r/extsoft/lib/i386 -llzma -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+byte-compiling package 'utils'
+building package 'grDevices'
+making axis_scales.d from axis_scales.c
+making chull.d from chull.c
+making devices.d from devices.c
+making init.d from init.c
+making stubs.d from stubs.c
+making colors.d from colors.c
+making devPicTeX.d from devPicTeX.c
+making devPS.d from devPS.c
+making devWindows.d from devWindows.c
+making winbitmap.d from winbitmap.c
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c axis_scales.c -o axis_scales.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c chull.c -o chull.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c devices.c -o devices.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c stubs.c -o stubs.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c colors.c -o colors.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c devPicTeX.c -o devPicTeX.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H  -I"C:/r/extsoft" -I../../../../src/gnuwin32  -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c devPS.c -o devPS.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H  -I../../../../src/gnuwin32 -I../../../../src/extra -DR_ARCH='"i386"'  -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c devWindows.c -o devWindows.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H  -DHAVE_PNG -DHAVE_JPEG -DHAVE_TIFF -I"C:/r/extsoft"  -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c winbitmap.c -o winbitmap.o
+gcc -shared -s -static-libgcc -o grDevices.dll tmp.def axis_scales.o chull.o devices.o init.o stubs.o colors.o devPicTeX.o devPS.o devWindows.o winbitmap.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -lRgraphapp -lpng -ltiff -ljpeg -lz -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+byte-compiling package 'grDevices'
+building package 'graphics'
+making init.d from init.c
+making base.d from base.c
+making graphics.d from graphics.c
+making par.d from par.c
+making plot.d from plot.c
+making plot3d.d from plot3d.c
+making stem.d from stem.c
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c base.c -o base.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c graphics.c -o graphics.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c par.c -o par.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c plot.c -o plot.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c plot3d.c -o plot3d.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H -I../../../../src/main    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c stem.c -o stem.o
+Error in library.dynam(lib, package, package.lib) : 
+  DLL 'graphics' not found: maybe not installed for this architecture?
+In addition: Warning messages:
+1: package 'datasets' in options("defaultPackages") was not found 
+2: S3 methods 'Axis.default', 'Axis.Date', 'Axis.POSIXt', 'Axis.table', 'barplot.default', 'boxplot.default', 'boxplot.formula', 'boxplot.matrix', 'cdplot.default', 'cdplot.formula', 'contour.default', 'hist.Date', 'hist.default', 'hist.POSIXt', 'identify.default', 'image.default', 'lines.default', 'lines.formula', 'lines.histogram', 'lines.table', 'mosaicplot.default', 'mosaicplot.formula', 'pairs.default', 'pairs.formula', 'persp.default', 'plot.data.frame', 'plot.default', 'plot.factor', 'plot.formula', 'plot.function', 'plot.histogram', 'plot.raster', 'plot.table', 'points.default', 'points.formula', 'points.table', 'spineplot.default', 'spineplot.formula', 'stripchart.default', 'stripchart.formula', 'sunflowerplot.default', 'sunflowerplot.formula', 'text.default', 'text.formula' were declared in NAMESPACE but not found 
+During startup - Warning messages:
+1: package 'graphics' in options("defaultPackages") was not found 
+2: package 'stats' in options("defaultPackages") was not found 
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc -shared -s -static-libgcc -o graphics.dll tmp.def init.o base.o graphics.o par.o plot.o plot3d.o stem.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+Error in library.dynam(lib, package, package.lib) : 
+  DLL 'graphics' not found: maybe not installed for this architecture?
+In addition: Warning messages:
+1: package 'datasets' in options("defaultPackages") was not found 
+2: S3 methods 'Axis.default', 'Axis.Date', 'Axis.POSIXt', 'Axis.table', 'barplot.default', 'boxplot.default', 'boxplot.formula', 'boxplot.matrix', 'cdplot.default', 'cdplot.formula', 'contour.default', 'hist.Date', 'hist.default', 'hist.POSIXt', 'identify.default', 'image.default', 'lines.default', 'lines.formula', 'lines.histogram', 'lines.table', 'mosaicplot.default', 'mosaicplot.formula', 'pairs.default', 'pairs.formula', 'persp.default', 'plot.data.frame', 'plot.default', 'plot.factor', 'plot.formula', 'plot.function', 'plot.histogram', 'plot.raster', 'plot.table', 'points.default', 'points.formula', 'points.table', 'spineplot.default', 'spineplot.formula', 'stripchart.default', 'stripchart.formula', 'sunflowerplot.default', 'sunflowerplot.formula', 'text.default', 'text.formula' were declared in NAMESPACE but not found 
+During startup - Warning messages:
+1: package 'graphics' in options("defaultPackages") was not found 
+2: package 'stats' in options("defaultPackages") was not found 
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+byte-compiling package 'graphics'
+building package 'stats'
+making init.d from init.c
+making kmeans.d from kmeans.c
+making ansari.d from ansari.c
+making bandwidths.d from bandwidths.c
+making chisqsim.d from chisqsim.c
+making d2x2xk.d from d2x2xk.c
+making fexact.d from fexact.c
+making kendall.d from kendall.c
+making ks.d from ks.c
+making line.d from line.c
+making smooth.d from smooth.c
+making prho.d from prho.c
+making swilk.d from swilk.c
+making ksmooth.d from ksmooth.c
+making loessc.d from loessc.c
+making monoSpl.d from monoSpl.c
+making isoreg.d from isoreg.c
+making Srunmed.d from Srunmed.c
+making dblcen.d from dblcen.c
+making distance.d from distance.c
+making hclust-utils.d from hclust-utils.c
+making nls.d from nls.c
+making rWishart.d from rWishart.c
+making HoltWinters.d from HoltWinters.c
+making PPsum.d from PPsum.c
+making arima.d from arima.c
+making burg.d from burg.c
+making filter.d from filter.c
+making mAR.d from mAR.c
+making pacf.d from pacf.c
+making starma.d from starma.c
+making port.d from port.c
+making family.d from family.c
+making sbart.d from sbart.c
+making approx.d from approx.c
+making loglin.d from loglin.c
+making lowess.d from lowess.c
+making massdist.d from massdist.c
+making splines.d from splines.c
+making lm.d from lm.c
+making complete_cases.d from complete_cases.c
+making cov.d from cov.c
+making deriv.d from deriv.c
+making fft.d from fft.c
+making fourier.d from fourier.c
+making model.d from model.c
+making optim.d from optim.c
+making optimize.d from optimize.c
+making integrate.d from integrate.c
+making random.d from random.c
+making distn.d from distn.c
+making zeroin.d from zeroin.c
+making rcont.d from rcont.c
+making influence.d from influence.c
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c kmeans.c -o kmeans.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c ansari.c -o ansari.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c bandwidths.c -o bandwidths.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c chisqsim.c -o chisqsim.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c d2x2xk.c -o d2x2xk.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c fexact.c -o fexact.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c kendall.c -o kendall.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c ks.c -o ks.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c line.c -o line.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c smooth.c -o smooth.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c prho.c -o prho.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c swilk.c -o swilk.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c ksmooth.c -o ksmooth.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c loessc.c -o loessc.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c monoSpl.c -o monoSpl.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c isoreg.c -o isoreg.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c Srunmed.c -o Srunmed.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c dblcen.c -o dblcen.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c distance.c -o distance.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c hclust-utils.c -o hclust-utils.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c nls.c -o nls.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c rWishart.c -o rWishart.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c HoltWinters.c -o HoltWinters.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c PPsum.c -o PPsum.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c arima.c -o arima.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c burg.c -o burg.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c filter.c -o filter.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c mAR.c -o mAR.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c pacf.c -o pacf.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c starma.c -o starma.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c port.c -o port.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c family.c -o family.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c sbart.c -o sbart.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c approx.c -o approx.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c loglin.c -o loglin.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c lowess.c -o lowess.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c massdist.c -o massdist.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c splines.c -o splines.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c lm.c -o lm.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c complete_cases.c -o complete_cases.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c cov.c -o cov.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c deriv.c -o deriv.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c fft.c -o fft.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c fourier.c -o fourier.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c model.c -o model.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c optim.c -o optim.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c optimize.c -o optimize.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c integrate.c -o integrate.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c random.c -o random.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c distn.c -o distn.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c zeroin.c -o zeroin.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c rcont.c -o rcont.o
+gcc  -I"../../../../include" -DNDEBUG -DHAVE_CONFIG_H -I../../../../src/include    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c influence.c -o influence.o
+gfortran      -O3  -mtune=core2 -c bsplvd.f -o bsplvd.o
+gfortran      -O3  -mtune=core2 -c bvalue.f -o bvalue.o
+gfortran      -O3  -mtune=core2 -c bvalus.f -o bvalus.o
+gfortran      -O3  -mtune=core2 -c loessf.f -o loessf.o
+gfortran      -O3  -mtune=core2 -c ppr.f -o ppr.o
+gfortran      -O3  -mtune=core2 -c qsbart.f -o qsbart.o
+gfortran      -O3  -mtune=core2 -c sgram.f -o sgram.o
+gfortran      -O3  -mtune=core2 -c sinerp.f -o sinerp.o
+gfortran      -O3  -mtune=core2 -c sslvrg.f -o sslvrg.o
+gfortran      -O3  -mtune=core2 -c stxwx.f -o stxwx.o
+gfortran      -O3  -mtune=core2 -c hclust.f -o hclust.o
+gfortran      -O3  -mtune=core2 -c kmns.f -o kmns.o
+gfortran      -O3  -mtune=core2 -c eureka.f -o eureka.o
+gfortran      -O3  -mtune=core2 -c stl.f -o stl.o
+gfortran  -O3 -ffloat-store -c portsrc.f -o portsrc.o
+gfortran      -O3  -mtune=core2 -c lminfl.f -o lminfl.o
+gcc -shared -s -static-libgcc -o stats.dll stats-win.def init.o kmeans.o ansari.o bandwidths.o chisqsim.o d2x2xk.o fexact.o kendall.o ks.o line.o smooth.o prho.o swilk.o ksmooth.o loessc.o monoSpl.o isoreg.o Srunmed.o dblcen.o distance.o hclust-utils.o nls.o rWishart.o HoltWinters.o PPsum.o arima.o burg.o filter.o mAR.o pacf.o starma.o port.o family.o sbart.o approx.o loglin.o lowess.o massdist.o splines.o lm.o complete_cases.o cov.o deriv.o fft.o fourier.o model.o optim.o optimize.o integrate.o random.o distn.o zeroin.o rcont.o influence.o bsplvd.o bvalue.o bvalus.o loessf.o ppr.o qsbart.o sgram.o sinerp.o sslvrg.o stxwx.o hclust.o kmns.o eureka.o stl.o portsrc.o lminfl.o ../../../gnuwin32/dllversion.o -L../../../../bin/i386 -lRlapack -L../../../../bin/i386 -lRblas -lgfortran -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+byte-compiling package 'stats'
+building package 'datasets'
+building package 'methods'
+making do_substitute_direct.d from do_substitute_direct.c
+making init.d from init.c
+making methods_list_dispatch.d from methods_list_dispatch.c
+making slot.d from slot.c
+making class_support.d from class_support.c
+making tests.d from tests.c
+making utils.d from utils.c
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c do_substitute_direct.c -o do_substitute_direct.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c methods_list_dispatch.c -o methods_list_dispatch.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c slot.c -o slot.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c class_support.c -o class_support.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c tests.c -o tests.o
+gcc  -I"../../../../include" -DNDEBUG -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c utils.c -o utils.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc -shared -s -static-libgcc -o methods.dll tmp.def do_substitute_direct.o init.o methods_list_dispatch.o slot.o class_support.o tests.o utils.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+byte-compiling 'methods'
+initializing class and method definitions ... done
+building package 'grid'
+making gpar.d from gpar.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making grid.d from grid.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making just.d from just.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making layout.d from layout.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making matrix.d from matrix.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making register.d from register.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making state.d from state.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making unit.d from unit.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making util.d from util.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+making viewport.d from viewport.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c gpar.c -o gpar.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c grid.c -o grid.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c just.c -o just.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c layout.c -o layout.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c matrix.c -o matrix.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c register.c -o register.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c state.c -o state.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c unit.c -o unit.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c util.c -o util.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c viewport.c -o viewport.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc -shared -s -static-libgcc -o grid.dll grid-win.def gpar.o grid.o just.o layout.o matrix.o register.o state.o unit.o util.o viewport.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+byte-compiling package 'grid'
+building package 'splines'
+making splines.d from splines.c
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc  -I"../../../../include" -DNDEBUG `Rscript -e "Rcpp:::CxxFlags()"`    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c splines.c -o splines.o
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+gcc -shared -s -static-libgcc -o splines.dll tmp.def splines.o ../../../gnuwin32/dllversion.o -LC:/r/extsoft/lib/i386 -LC:/r/extsoft/lib -L../../../../bin/i386 -lR
+Error in loadNamespace(name) : there is no package called 'Rcpp'
+Calls: ::: ... tryCatch -> tryCatchList -> tryCatchOne -> <Anonymous>
+Execution halted
+byte-compiling package 'splines'
+building package 'stats4'
+byte-compiling package 'stats4'
+building package 'tcltk'
+making init.d from init.c
+making tcltk.d from tcltk.c
+making tcltk_win.d from tcltk_win.c
+gcc  -I"../../../../include" -DNDEBUG -I "../../../../Tcl"/include -DWin32 -I../../../../src/include -DHAVE_CONFIG_H    -I"C:/r/extsoft/include"     -O3 -Wall  -std=gnu99 -mtune=core2 -c init.c -o init.o
+In file included from init.c:22:0:
+tcltk.h:25:17: fatal error: tcl.h: No such file or directory
+compilation terminated.
+make[4]: *** [init.o] Error 1
+make[3]: *** [mksrc-win2] Error 1
+make[2]: *** [all] Error 2
+make[1]: *** [R] Error 1
+make: *** [all] Error 2
