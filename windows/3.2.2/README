@@ -39,4 +39,7 @@ So the R-3.2.2\bin\ contains R.exe, Rscript.exe and i386 subfolder.
 Question: how to diable creating NEWS.pdf which gave an error pdflatex is not available?
 In fact, NEWS.pdf has existed under R-3.2.2\doc from R source tarball though the github does not show this file.
 
-
+If we care about pdflatex, install MikTex. Then 
+PATH=%PATH%;C:\Program Files\MikTex 2.9\miktex\bin\x64
+It still gave an error and was asked to check
+C:/Users/brb/AppData/Local/MikTex/2.9/miktex/log/pdflatex.log
