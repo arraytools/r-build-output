@@ -1,7 +1,8 @@
 # Assume R-3.2.2 will be extracted to C:\users\brb\Downloads folder.
 
-# Need to download R_Tcl_8-5-8.zip and extract it to R-3.2.2 folder.
-# http://www.stats.ox.ac.uk/pub/Rtools/R30x.html
+# Need to download R_Tcl_8-5-8.zip (http://www.stats.ox.ac.uk/pub/Rtools/R30x.html)
+# and extract it to R-3.2.2 folder
+unzip C:/users/brb/Downloads/R_Tcp_8-5-8.zip -d c:\users\brb\Downloads\R-3.2.2
 
 mkdir c:/tmp
 TMPDIR=c:/tmp
@@ -20,8 +21,9 @@ cp MkRules.dist MkRules.local
 
 make > makeOutput.txt 2>&1
 
-# Got an error complaining about loadNamespace(Rcpp). 
-# However R.exe is still created.
+# Got errors complaining about loadNamespace(Rcpp) when building package 'methods'.
+# However 32-bit R.exe is still created (even tcl, Rcpp not taken care)
+
 # Use the generated R.exe to run install.packages("Rcpp")
 # But be sure the package is installed to the current R/library
 #     not Documents/R/R-3.2 folder.
