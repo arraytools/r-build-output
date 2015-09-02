@@ -1,3 +1,5 @@
 ./configure > configOutput.txt
 
 make -j 5 > makeOutput.txt
+
+make -j 5 DEBUG=T > makeDebugOutput.txt
