@@ -3,15 +3,24 @@
 # Need to download R_Tcl_8-5-8.zip (http://www.stats.ox.ac.uk/pub/Rtools/R30x.html)
 # and extract it to R-3.2.2 folder
 unzip C:/users/brb/Downloads/R_Tcp_8-5-8.zip -d c:\users\brb\Downloads\R-3.2.2
+# or (32-bit)
+cp -R C:\R\Tcl C:\Users\brb\Downloads\R-3.2.2
+# or (64-bit)
+cp -R C:\R64\Tcl C:\Users\brb\Downloads\R-3.2.2
 
-mkdir c:/tmp
-TMPDIR=c:/tmp
+mkdir c:\tmp
+set TMPDIR=c:/tmp
 
-tar xzvf R-3.2.2.tar.gz
+# extsoft
+mkdir C:\R\extsoft
+unzip C:\Users\brb\Downloads\local320.zip -d C:\R\extsoft
+
+tar --no-same-owner -xf R-3.2.2.tar.gz
 
 cd R-3.2.2\src\gnuwin32
 
-PATH=c:\Rtools\bin;c:\Rtools\gcc-4.6.3\bin;C:\users\brb\Downloads\R-3.2.2\bin
+PATH=c:\Rtools\bin;c:\Rtools\gcc-4.6.3\bin
+PATH=%PATH%;C:\users\brb\Downloads\R-3.2.2\bin;c:\windows;c:\windows\system32
 
 cp MkRules.dist MkRules.local 
 # add c:/R/extsoft to LOCAL_SOFT and uncomment
