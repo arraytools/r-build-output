@@ -1,13 +1,5 @@
 # Assume R-3.2.2 will be extracted to C:\users\brb\Downloads folder.
 
-# Need to download R_Tcl_8-5-8.zip (http://www.stats.ox.ac.uk/pub/Rtools/R30x.html)
-# and extract it to R-3.2.2 folder
-unzip C:/users/brb/Downloads/R_Tcp_8-5-8.zip -d c:\users\brb\Downloads\R-3.2.2
-# or (32-bit)
-cp -R C:\R\Tcl C:\Users\brb\Downloads\R-3.2.2
-# or (64-bit)
-cp -R C:\R64\Tcl C:\Users\brb\Downloads\R-3.2.2
-
 mkdir c:\tmp
 set TMPDIR=c:/tmp
 
@@ -21,29 +13,27 @@ cd R-3.2.2\src\gnuwin32
 
 PATH=c:\Rtools\bin;c:\Rtools\gcc-4.6.3\bin
 PATH=%PATH%;C:\users\brb\Downloads\R-3.2.2\bin;c:\windows;c:\windows\system32
+# the 2nd line can also be written (32-bit R)
+# PATH=%PATH%;C:\users\brb\Downloads\R-3.2.2\bin\i386;c:\windows;c:\windows\system32
+# or (64-bit R)
+# PATH=%PATH%;C:\users\brb\Downloads\R-3.2.2\bin\x64;c:\windows;c:\windows\system32
 
 cp MkRules.dist MkRules.local 
 # add c:/R/extsoft to LOCAL_SOFT and uncomment
 # the line of EX_LIBS
 
+# Assume we choose the full installation instead of the default when installing Rtools
+# (32-bit)
+cp -R C:\R\Tcl C:\Users\brb\Downloads\R-3.2.2\
+# or (64-bit)
+cp -R C:\R64\Tcl C:\Users\brb\Downloads\R-3.2.2\
 # make clean
 
 make > makeOutput.txt 2>&1
 
-# Got errors complaining about loadNamespace(Rcpp) when building package 'methods'.
-# However 32-bit R.exe is still created (even tcl, Rcpp not taken care)
+The last error is from texi2dvi which is related to (not avail) pdflatex. Don't need to worry about it.
 
-# Use the generated R.exe to run install.packages("Rcpp")
-# But be sure the package is installed to the current R/library
-#     not Documents/R/R-3.2 folder.
-# install.packages("Rcpp", lib="C:/users/brb/Downloads/R-3.2.2/library", 
-#                   repos = "https://cran.rstudio.com")
-
-We can run 'make' command again if there is any errors. 
-
-The last error is from texi2dvi which is related to (not avail) pdflatex.
-
-So the R-3.2.2\bin\ contains R.exe, Rscript.exe and i386 subfolder.
+So the R-3.2.2\bin\ contains R.exe, Rscript.exe and i386 subfolder contains more executables.
 
 Question: how to diable creating NEWS.pdf which gave an error pdflatex is not available?
 In fact, NEWS.pdf has existed under R-3.2.2\doc from R source tarball though the github does not show this file.
