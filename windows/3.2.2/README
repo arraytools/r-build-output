@@ -42,3 +42,10 @@ If we care about pdflatex, install MikTex. Then
 PATH=%PATH%;C:\Program Files\MikTex 2.9\miktex\bin\x64
 It still gave an error and was asked to check
 C:/Users/brb/AppData/Local/MikTex/2.9/miktex/log/pdflatex.log
+
+N.B. I could not install MiKTex successfully. The error message is discussed on http://tex.stackexchange.com/questions/146885/miktex-install-fails. 
+Trying to install onto different directory does not help:( An alternative approach is to download the portable version and install it onto e.g. C:\Users\brb\Downloads\miktex\ directory.
+Before the first time to run this portable miktex, we need to run 'miktex-portable.cmd' program. This will create a notification icon in the task bar.
+Right click on it, start Miktex Options and choose Yes for the option 'install missing packages on-the-fly'.
+
+So far, the only error we have is about 'texi2any'. This is relate to creating the manuals.
