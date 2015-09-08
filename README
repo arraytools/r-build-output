@@ -1,0 +1,7 @@
+This repository contains some notes from my experience of building R from source. Hope it is useful to others too.
+
+I have tested the building under Ubuntu and Windows systems. See each subdirectory for more details. 
+
+Since each version of R may be different, I have also use the R version number as the directory name for easy search.
+
+ - Olney, Maryland
