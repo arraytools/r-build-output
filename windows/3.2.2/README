@@ -33,6 +33,7 @@ make > makeOutput.txt 2>&1
 # make DEBUG=T > makeDebugOutput.txt 2>&1
 # If we like to time the 'make' command, create <timemake.bat> file and run it
 # timemake.bat
+# The console will show the start and end time of executing the make command.
 
 The last error is from texi2dvi which is related to (not avail) pdflatex. Don't need to worry about it.
 
