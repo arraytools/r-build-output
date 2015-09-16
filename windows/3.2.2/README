@@ -30,6 +30,9 @@ cp -R C:\R64\Tcl C:\Users\brb\Downloads\R-3.2.2\
 # make clean
 
 make > makeOutput.txt 2>&1
+# make DEBUG=T > makeDebugOutput.txt 2>&1
+# If we like to time the 'make' command, create <timemake.bat> file and run it
+# timemake.bat
 
 The last error is from texi2dvi which is related to (not avail) pdflatex. Don't need to worry about it.
 
