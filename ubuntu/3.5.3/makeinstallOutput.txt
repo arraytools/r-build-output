@@ -1,0 +1,107 @@
+brb@brb-VirtualBox ~/Downloads/R-3.5.3 $ sudo make install
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/m4'
+make[1]: Nothing to be done for 'install'.
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/m4'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/tools'
+make[1]: Nothing to be done for 'install'.
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/tools'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/doc'
+installing doc ...
+mkdir -p -- /usr/local/lib/R/doc
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/doc/html'
+installing doc/html ...
+mkdir -p -- /usr/local/lib/R/doc/html
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/doc/html'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/doc/manual'
+installing doc/manual ...
+mkdir -p -- /usr/local/lib/R/doc/manual
+mkdir -p -- /usr/local/lib/R/doc/manual/images
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/doc/manual'
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/doc'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/etc'
+mkdir -p -- /usr/local/lib/R/etc
+installing etc ...
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/etc'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/share'
+installing share ...
+mkdir -p -- /usr/local/lib/R/share
+mkdir -p -- /usr/local/lib/R/share/R
+mkdir -p -- /usr/local/lib/R/share/dictionaries
+mkdir -p -- /usr/local/lib/R/share/encodings
+mkdir -p -- /usr/local/lib/R/share/java
+mkdir -p -- /usr/local/lib/R/share/licenses
+mkdir -p -- /usr/local/lib/R/share/make
+mkdir -p -- /usr/local/lib/R/share/Rd
+mkdir -p -- /usr/local/lib/R/share/Rd/macros
+mkdir -p -- /usr/local/lib/R/share/sh
+mkdir -p -- /usr/local/lib/R/share/texmf
+mkdir -p -- /usr/local/lib/R/share/texmf/bibtex/bib
+mkdir -p -- /usr/local/lib/R/share/texmf/bibtex/bst
+mkdir -p -- /usr/local/lib/R/share/texmf/tex/latex
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/share'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/src'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/scripts'
+mkdir -p -- /usr/local/lib/R/bin
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/scripts'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/include'
+mkdir -p -- /usr/local/lib/R/include
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/include/R_ext'
+mkdir -p -- /usr/local/lib/R/include/R_ext
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/include/R_ext'
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/include'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra/blas'
+mkdir -p -- /usr/local/lib/R/lib
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra/blas'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra/tre'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra/tre'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra/tzone'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra/tzone'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra/xdr'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra/xdr'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/extra/intl'
+make[3]: Nothing to be done for 'install'.
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra/intl'
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/extra'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/appl'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/appl'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/nmath'
+make[2]: Nothing to be done for 'install'.
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/nmath'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/unix'
+gcc -I. -I../../src/include -I../../src/include  -I/usr/local/include -DHAVE_CONFIG_H    -g -O2  -L/usr/local/lib -DR_HOME='"/usr/local/lib/R"' \
+  -o Rscript ./Rscript.c
+mkdir -p -- /usr/local/lib/pkgconfig
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/unix'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/main'
+mkdir -p -- /usr/local/lib/R/bin/exec
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/main'
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/main'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/main'
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/main'
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/main'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/modules'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/modules/internet'
+mkdir -p -- /usr/local/lib/R/modules
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/modules/internet'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/modules/lapack'
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/modules/lapack'
+make[3]: Entering directory '/home/brb/Downloads/R-3.5.3/src/modules/X11'
+make[3]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/modules/X11'
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/modules'
+make[2]: Entering directory '/home/brb/Downloads/R-3.5.3/src/library'
+mkdir -p -- /usr/local/lib/R/library
+installing packages ...
+  building HTML index ...
+make[2]: Leaving directory '/home/brb/Downloads/R-3.5.3/src/library'
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/src'
+make[1]: Entering directory '/home/brb/Downloads/R-3.5.3/tests'
+make[1]: Nothing to be done for 'install'.
+make[1]: Leaving directory '/home/brb/Downloads/R-3.5.3/tests'
+brb@brb-VirtualBox ~/Downloads/R-3.5.3 $ which R
+/usr/local/bin/R
+
